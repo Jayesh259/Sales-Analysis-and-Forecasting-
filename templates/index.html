@@ -1,0 +1,99 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+
+    <div style = "color:black">
+        <form action = "{{ url_for('predict')}}" method="post">
+           <h1><p style = "font-family:courier;">Demand Forecast
+</p></h1>
+            <h2> Select Food Product </h2>
+            <select name = "Product" id="first" required = "required">
+                <option value = "1">Milk</option>
+                <option value = "2">Bread</option>
+                <option value = "3">Nutella</option>
+                <option value = "4">Butter</option>
+                <option value = "5">Rice</option>
+                <option value = "6">Yogurt</option>
+                <option value = "7">Cheese</option>
+                <option value = "8">Popcorn</option>
+                <option value = "9">Keto Coffee</option>
+                <option value = "10">Peanut Butter</option>
+                <option value = "11">Jelly Sandwiches</option>
+                <option value = "12">Banana</option>
+                <option value = "13">Olive Oil</option>
+                <option value = "14">Premia Sugar</option>
+                <option value = "15">Jaggery</option>
+                <option value = "16">Salt</option>
+                <option value = "17">Dry Fruits</option>
+                <option value = "18">Cookies</option>
+                <option value = "19">Tata Tea</option>
+                <option value = "20">Lipton Green Tea</option>
+                <option value = "21">Honey</option>
+                <option value = "22">Bru Coffee</option>
+                <option value = "23">Green Peas</option>
+                <option value = "24">Chana Dal</option>
+                <option value = "25">Everest Chaat Masala</option>
+                <option value = "26">Maggi</option>
+                <option value = "27">Corn Flakes</option>
+                <option value = "28">Fruit Jam</option>
+                <option value = "29">Tomato Ketchup</option>
+                <option value = "30">Kellog's Oats</option>
+            </select>
+                
+           
+            <h2> Select Store </h2> 
+            <select name = "Store" id="second" required = "required">
+                <option value = "1">Pune, Satara</option>
+                <option value = "2">Pune, Kalyani Nagar</option>
+                <option value = "3">Pune, Shivaji Nagar</option>
+                <option value = "4">Mumbai, Airoli</option>
+                <option value = "5">Mumbai, Seawoods West</option>
+                <option value = "6">Aurangabad, N12</option>
+                <option value = "7">Karad, Malkapur</option>
+                <option value = "8">Nanded, Canal Rd</option>
+                <option value = "9">Mumbai, Panvel</option>
+                <option value = "10">Pune, Deccan</option>
+            </select>
+
+            <br><br><br><br><button id ="sub" type="submit">FORECAST FOR UPCOMING MONTH</button>
+             <br>
+             
+        </form>   
+        
+   <table border = "1">
+        <tr>
+                <th>Days</th>
+                <th>Sales Quantity</th>
+        </tr>
+        {% for k, v in prediction_text1.items() %}
+                <tr>
+                        <td width = "150">{{ k }}</td>
+                        <td width = "150">{{ v }}</td>
+                </tr>
+        {% endfor %}
+        </table>
+      
+     
+    
+        <br><br><h3>{{ prediction_text2 }}</h3>
+        <br><br><h3>{{ prediction_text3 }}</h3>
+        <br>
+        <br>
+    </div>
+            
+    
+    
+        
+
+{% endblock %}
