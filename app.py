@@ -11,7 +11,7 @@ import pickle
 
 import sklearn
 
-
+  
 
 app = Flask(__name__)
 
@@ -35,7 +35,7 @@ def forecast():
 def analysis():
     return render_template('analysis.html')
 
-
+ 
 
 @app.route("/predict",methods=['POST'])
 def predict():

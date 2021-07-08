@@ -71,21 +71,10 @@
              
         </form>   
         
-   <table border = "1">
-        <tr>
-                <th>Days</th>
-                <th>Sales Quantity</th>
-        </tr>
-        {% for k, v in prediction_text1.items() %}
-                <tr>
-                        <td width = "150">{{ k }}</td>
-                        <td width = "150">{{ v }}</td>
-                </tr>
-        {% endfor %}
-        </table>
+  
       
      
-    
+        <br><br><h3>{{ prediction_text1 }}</h3>
         <br><br><h3>{{ prediction_text2 }}</h3>
         <br><br><h3>{{ prediction_text3 }}</h3>
         <br>
